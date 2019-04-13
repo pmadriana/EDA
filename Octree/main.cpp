@@ -56,8 +56,7 @@ void init() {
 
 	//Insertar puntos en octree
 	octreePoints = new OctreePoint[nPoints];
-	int cont = 2;
-	int num_pts = 1;
+	int cont = 0;
 	for (int i = 0; i < nPoints; i++) {
 		octreePoints[i].setPosition(points[i]);
 		cout << "Proceso del punto: " << i << endl;
@@ -66,7 +65,7 @@ void init() {
 		cout << endl;
 	}
 //	cout << "se dividio: " << cont << endl;
-	//cout << "regiones " << cont*8 << endl;
+	cout << "regiones " <<( cont*8) << endl;
 	//cout << octree->children[6]->data->getPosition().D[0];
 	
 }
@@ -81,6 +80,5 @@ int main(int argc, char **argv) {
 	//testOctree();
 
 
-
-	return 0;
+	
 }
