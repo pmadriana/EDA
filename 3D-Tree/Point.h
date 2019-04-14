@@ -1,6 +1,9 @@
 #pragma once
 #include <cmath>
+#include <vector>
+using namespace std;
 struct Vec3;
+
 
 struct Vec3 {
 	union {
@@ -17,32 +20,14 @@ struct Vec3 {
 
 };
 class Point {
-
-	Vec3 position;
 public:
+	Vec3 position;
+	vector<double> dim; //dim.size = 3 x,y,z [1,2,3]
+	double data;
 	Point() { }
-	Point(const Vec3& position) : position(position) { }
+	Point(vector<double>& dim_, double data_) : dim(dim_), data(data_) {}
+	Point(vector<double>& dim_) : dim(dim_) {}
+	/*Point(const Vec3& position) : position(position) { }*/
 	inline const Vec3& getPosition() const { return position; }
 	inline void setPosition(const Vec3& p) { position = p; }
 };
-/*class Point
-{
-public:
-
-	double x, y, z;
-	vector<double> coord;
-
-	Point()
-	{
-		this->x = 0.0;
-		this->y = 0.0;
-		this->z = 0.0;
-	}
-
-	Point(double x, double y, double z)
-	{
-		this->x = x;
-		this->y = y;
-		this->z = z;
-	}
-};*/
